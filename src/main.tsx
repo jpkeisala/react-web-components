@@ -2,7 +2,8 @@ import ReactDOM from 'react-dom/client';
 import NextOnTodo from './components/NextOnTodo';
 import TodoList from './components/TodoList';
 import TodoItem from './components/TodoItem';
-import './App.css'
+
+
 
 class NextOnTodoElement extends HTMLElement {
     connectedCallback() {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './TodoList.module.css';
 
 interface Todo {
     userId: number;
@@ -30,25 +31,10 @@ const TodoList: React.FC = () => {
 
     return (
         <>
-        <style>
-            {`
-                :host {
-                    display: block;
-                    background: #f5f5f5;
-                    padding: 20px;
-                    border-radius: 10px;
-                }
-                .todo-item {
-                    background: white;
-                    padding: 10px;
-                    margin-bottom: 5px;
-                    border: 1px solid #ddd;
-                }
-            `}
-        </style>
+      
        
   
-        <ul className="todo-item">
+        <ul className={styles.todoList}>
             {todos.slice(0, 5).map((todo) => (
                 <li key={todo.id}>
                     {todo.title} - {todo.completed ? 'Done' : 'Pending'}

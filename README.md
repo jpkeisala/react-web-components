@@ -111,3 +111,6 @@ JP - [Your GitHub Profile](https://github.com/jpkeisala)
 ---
 
 Feel free to contribute and improve this project!
+
+
+todo: https://www.npmjs.com/package/tailwindcss-scoped-preflight
