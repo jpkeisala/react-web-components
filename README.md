@@ -1,50 +1,113 @@
-# React + TypeScript + Vite
+# Web Components with React and Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to create and integrate **Web Components** using **React**, **TypeScript**, and **Vite**. The goal is to build reusable, encapsulated components that can be embedded into any web application, including legacy systems like ASP.NET MVC.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React Components as Web Components**: Easily reusable in any HTML page.
+- **Encapsulation**: Using Shadow DOM to prevent style conflicts.
+- **API Integration**: Fetching data from JSONPlaceholder.
+- **Efficient Bundling**: Vite for fast development and production builds.
+- **TypeScript Support**: Ensuring type safety and better developer experience.
+- **ShadCN for Style Scoping**: Demonstrating style encapsulation within web components.
 
-## Expanding the ESLint configuration
+## Components
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. `TodoList`
+Lists todos by fetching data from `https://jsonplaceholder.typicode.com/todos/` and displaying them in a styled list.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+**Usage:**
+```html
+<todo-list></todo-list>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. `TodoItem`
+Displays details of a specific todo item by fetching data from `https://jsonplaceholder.typicode.com/todos/{id}`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+**Usage:**
+```html
+<todo-item id="2"></todo-item>
 ```
+
+## Installation
+
+To set up the project locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/jpkeisala/web-components-react-vite.git
+
+# Navigate to the project folder
+cd web-components-react-vite
+
+# Install dependencies
+npm install
+```
+
+## Development
+
+Run the development server to test the components locally:
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:5173` to see the components in action.
+
+## Building for Production
+
+To generate the production build, run:
+
+```bash
+npm run build
+```
+
+The output files will be in the `dist/` directory and can be used in any web environment.
+
+## Usage in External Applications
+
+To use the built components in an external application, include the generated script in your HTML:
+
+```html
+<script src="path-to/next-on-todo.umd.js" defer></script>
+
+<todo-list></todo-list>
+<todo-item id="2"></todo-item>
+```
+
+## Project Structure
+
+```
+web-components-react-vite/
+├── public/               # Static assets
+├── src/                  # Source files
+│   ├── components/       # React components
+│   │   ├── TodoList.tsx  # Todo list component
+│   │   ├── TodoItem.tsx  # Single todo component
+│   ├── main.tsx          # Web Component definitions
+│   ├── styles/           # CSS Modules
+├── dist/                 # Build output
+├── vite.config.ts        # Vite configuration
+├── package.json          # Project dependencies
+└── tsconfig.json         # TypeScript configuration
+```
+
+## Technologies Used
+
+- React
+- TypeScript
+- Vite
+- Web Components (Custom Elements, Shadow DOM)
+- ShadCN for scoped styles
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+JP - [Your GitHub Profile](https://github.com/jpkeisala)
+
+---
+
+Feel free to contribute and improve this project!
