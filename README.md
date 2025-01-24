@@ -69,7 +69,7 @@ The output files will be in the `dist/` directory and can be used in any web env
 To use the built components in an external application, include the generated script in your HTML:
 
 ```html
-<script src="path-to/next-on-todo.umd.js" defer></script>
+<script src="path-to/web-components.umd.js" defer></script>
 
 <todo-list></todo-list>
 <todo-item id="2"></todo-item>

@@ -39,7 +39,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ id }) => {
                 <>
                     <h3>{todo.title}</h3>
                     <p>
-                        <strong>Status:</strong> {todo.completed ? 'Completed' : 'Pending'}
+                        <strong className='text-red-600'> Status:</strong> {todo.completed ? 'Completed' : 'Pending'}
                     </p>
                     <p>
                         <strong>User ID:</strong> {todo.userId}

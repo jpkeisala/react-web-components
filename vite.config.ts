@@ -12,8 +12,8 @@ export default defineConfig({
     build: {
         lib: {
             entry: 'src/main.tsx',
-            name: 'NextOnTodo',
-            fileName: (format) => `next-on-todo.${format}.js`,
+            name: 'web-components',
+            fileName: (format) => `web-components.${format}.js`,
         },
         rollupOptions: {
             external: ['react', 'react-dom'],
